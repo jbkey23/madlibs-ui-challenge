@@ -17,7 +17,9 @@ var MadlibForm = React.createClass({
   render: function() {
     return (
       <div className='madlib-form'>
-        <h2>Fill out the form below to create your madlib</h2>
+        <h1 className="page-title">Flocabulary Madlib</h1>
+        <h2 className='prompt'>Fill out the form below to create your madlib</h2>
+        <p className="hint">Hover to start.</p>
         <form onSubmit={this.onSubmit}>
           <Form
             ref="form"
@@ -33,7 +35,7 @@ var MadlibForm = React.createClass({
                   className="submit-button"
                   type="submit"
                 >
-                  Make your mad lib!
+                  Make your madlib
                 </button>
               )
             : null
@@ -89,8 +91,22 @@ var MadlibForm = React.createClass({
   componentDidMount: function() {
     $('.madlib-form input').focus(e => {
       $('.has-focus').removeClass('has-focus');
-      $(e.target).parent().addClass('has-focus');
-    })
+
+      var formGroup = $(e.target).parent();
+      formGroup.addClass('has-focus');
+      formGroup.removeClass('not-touched');
+      formGroup.addClass('touched');
+    });
+
+    $('.madlib-form .form-group').addClass('not-touched');
+
+    $('.madlib-form').hover(() => {
+      $('.madlib-form').addClass('form-showing');
+    });
+
+    setTimeout(() => {
+      $('.hint').addClass('show-hint');
+    }, 3000);
   },
 
   onSubmit: function(event) {

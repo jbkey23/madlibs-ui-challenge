@@ -1,7 +1,6 @@
 // The terms that
 // are wrapped in %&<term>&% will be madlib blanks
-module.exports = `
-Number One
+module.exports = `Number One
 Freedom of religion, speech, and %&yourFavoriteRight&%,
 Plus you can assemble in crowds and %&verb&%.
 
@@ -42,6 +41,4 @@ The people get more than these rights.
 
 Number %&number&%
 States can make other laws, and they just might.
-
-This is the Bill of Rights.
-`;
+This is the Bill of Rights.`;

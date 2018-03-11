@@ -2,7 +2,6 @@
 require('normalize.css/normalize.css');
 // this file is where styles should go
 require('styles/App.css');
-require('styles/App.scss');
 
 // Flocabulary uses React extensively. This exercise is built with it
 // but it is not required knowledge. Ideally, you will not have to
@@ -41,6 +40,8 @@ var AppComponent = React.createClass({
         )
     );
 
+    var pageClassName = this.state.submittedValue ? 'main madlib-page' : 'main form-page';
+
 
     return (
       // this is the `jsx` which you can alter to your needs. Edit it just
@@ -60,8 +61,7 @@ var AppComponent = React.createClass({
       //     <p></p>
       //   </div>
       // )
-      <div className="main">
-        <h1>FLOCABULARY MADLIB</h1>
+      <div className={pageClassName}>
         {content}
       </div>
     );
